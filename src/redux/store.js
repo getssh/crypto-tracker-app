@@ -6,7 +6,7 @@ const store = configureStore({
   reducer: {
     trending: trendingReducer,
     coins: coinsReducer,
-  }
+  },
 });
 
 export default store;

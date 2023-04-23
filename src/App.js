@@ -12,7 +12,7 @@ function App() {
         <Route path="/:id" element={<CoinDetail />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
