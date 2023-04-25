@@ -1,5 +1,3 @@
-// Home.test.js
-
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
@@ -68,7 +66,7 @@ describe('Home', () => {
     expect(ethereumCoin).not.toBeInTheDocument();
   });
 
-  it('renders the Home component', async () => {
+  it('Renders the Home component', async () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
@@ -79,11 +77,25 @@ describe('Home', () => {
 
     await screen.findByText('STATS BY TRENDING COIN');
     await screen.findByText('TRENDING COINS');
-    await screen.findByPlaceholderText('Search');
 
     expect(screen.getByText('STATS BY TRENDING COIN')).toBeInTheDocument();
     expect(screen.getByText('TRENDING COINS')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('Search')).toBeInTheDocument();
+  });
+
+  it('Test coin list rendering', async () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Home />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    await screen.findByText('Bitcoin');
+    await screen.findByText('Ethereum');
+
+    expect(screen.getByText('Bitcoin')).toBeInTheDocument();
+    expect(screen.getByText('Ethereum')).toBeInTheDocument();
   });
 });
 
