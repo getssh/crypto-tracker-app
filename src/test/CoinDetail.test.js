@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import CoinDetail from '../components/CoinDetail';
-const mockStore = configureStore([thunk]);
 
+const mockStore = configureStore([thunk]);
 
 describe('CoinDetail component', () => {
   let store;
@@ -30,7 +30,6 @@ describe('CoinDetail component', () => {
   });
 
   it('renders coin details', async () => {
-
     jest.spyOn(global, 'fetch').mockResolvedValue({
       json: jest.fn().mockResolvedValue(),
     });
@@ -40,7 +39,7 @@ describe('CoinDetail component', () => {
         <BrowserRouter>
           <CoinDetail match={{ params: { id: 'bitcoin' } }} />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByText(/TRENDING COIN DETAIL/i)).toBeInTheDocument();
@@ -54,7 +53,6 @@ describe('CoinDetail component', () => {
   });
 
   it('renders coin values', async () => {
-
     jest.spyOn(global, 'fetch').mockResolvedValue({
       json: jest.fn().mockResolvedValue(),
     });
@@ -64,7 +62,7 @@ describe('CoinDetail component', () => {
         <BrowserRouter>
           <CoinDetail match={{ params: { id: 'bitcoin' } }} />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByText('bitcoin')).toBeInTheDocument();

@@ -41,7 +41,7 @@ describe('Home', () => {
         <MemoryRouter>
           <Home />
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByPlaceholderText('Search')).toBeInTheDocument();
@@ -53,7 +53,7 @@ describe('Home', () => {
         <MemoryRouter>
           <Home />
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     const searchInput = screen.getByPlaceholderText('Search');
@@ -72,7 +72,7 @@ describe('Home', () => {
         <MemoryRouter>
           <Home />
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     await screen.findByText('STATS BY TRENDING COIN');
@@ -88,7 +88,7 @@ describe('Home', () => {
         <MemoryRouter>
           <Home />
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     await screen.findByText('Bitcoin');
@@ -98,4 +98,3 @@ describe('Home', () => {
     expect(screen.getByText('Ethereum')).toBeInTheDocument();
   });
 });
-
