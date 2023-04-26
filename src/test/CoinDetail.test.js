@@ -52,4 +52,28 @@ describe('CoinDetail component', () => {
     expect(screen.getByText(/Votes Down Percentage/i)).toBeInTheDocument();
     expect(screen.getByText(/Portfolio Users/i)).toBeInTheDocument();
   });
+
+  it('renders coin values', async () => {
+
+    jest.spyOn(global, 'fetch').mockResolvedValue({
+      json: jest.fn().mockResolvedValue(),
+    });
+
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <CoinDetail match={{ params: { id: 'bitcoin' } }} />
+        </BrowserRouter>
+      </Provider>
+    );
+
+    expect(screen.getByText('bitcoin')).toBeInTheDocument();
+    expect(screen.getByText('12')).toBeInTheDocument();
+    expect(screen.getByText('231')).toBeInTheDocument();
+    expect(screen.getByText('76')).toBeInTheDocument();
+    expect(screen.getByText('934676')).toBeInTheDocument();
+    expect(screen.getByText('32')).toBeInTheDocument();
+    expect(screen.getByText('68')).toBeInTheDocument();
+    expect(screen.getByText('4871')).toBeInTheDocument();
+  });
 });
