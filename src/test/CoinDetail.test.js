@@ -1,87 +1,55 @@
-// CoinDetail.test.js
-
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-
 import CoinDetail from '../components/CoinDetail';
-
 const mockStore = configureStore([thunk]);
 
-describe('CoinDetail', () => {
+
+describe('CoinDetail component', () => {
   let store;
 
   beforeEach(() => {
     store = mockStore({
-      coinDetail: {
+      coins: {
         isLoading: false,
-        coin: {
+        coins: {
           id: 'bitcoin',
-          name: 'Bitcoin',
-          image: 'https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579',
-          market_data: {
-            current_price: {
-              usd: 49000,
-            },
-            price_change_percentage_24h: 5.5,
-          },
+          market_cap_rank: 12,
+          coingecko_rank: 231,
+          community_score: 76,
+          liquidity_score: 934676,
+          sentiment_votes_up_percentage: 32,
+          sentiment_votes_down_percentage: 68,
+          watchlist_portfolio_users: 4871,
         },
         error: null,
       },
     });
   });
 
-  it('renders the coin name and price', () => {
+  it('renders coin details', async () => {
+
+    jest.spyOn(global, 'fetch').mockResolvedValue({
+      json: jest.fn().mockResolvedValue(),
+    });
+
     render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/coins/bitcoin']}>
-          <Routes>
-            <Route path="/coins/:id">
-              <CoinDetail />
-            </Route>
-          </Routes>
-        </MemoryRouter>
+        <BrowserRouter>
+          <CoinDetail match={{ params: { id: 'bitcoin' } }} />
+        </BrowserRouter>
       </Provider>
     );
 
-    expect(screen.getByText('Bitcoin')).toBeInTheDocument();
-    expect(screen.getByText('$49,000')).toBeInTheDocument();
-  });
-
-  it('renders the coin image', () => {
-    render(
-      <Provider store={store}>
-        <MemoryRouter initialEntries={['/coins/bitcoin']}>
-          <Routes>
-            <Route path="/coins/:id">
-              <CoinDetail />
-            </Route>
-          </Routes>
-        </MemoryRouter>
-      </Provider>
-    );
-
-    expect(screen.getByAltText('Bitcoin')).toHaveAttribute(
-      'src',
-      'https://assets.coingecko.com/coins/images/1/small/bitcoin.png?1547033579'
-    );
-  });
-
-  it('renders the price change percentage', () => {
-    render(
-      <Provider store={store}>
-        <MemoryRouter initialEntries={['/coins/bitcoin']}>
-          <Routes>
-            <Route path="/coins/:id">
-              <CoinDetail />
-            </Route>
-          </Routes>
-        </MemoryRouter>
-      </Provider>
-    );
-
-    expect(screen.getByText('5.5%')).toBeInTheDocument();
+    expect(screen.getByText(/TRENDING COIN DETAIL/i)).toBeInTheDocument();
+    expect(screen.getByText(/Coin Id/i)).toBeInTheDocument();
+    expect(screen.getByText(/Market Cap Rank/i)).toBeInTheDocument();
+    expect(screen.getByText(/Coingecko Rank/i)).toBeInTheDocument();
+    expect(screen.getByText(/Liquidity Score/i)).toBeInTheDocument();
+    expect(screen.getByText(/Votes Up Percentage/i)).toBeInTheDocument();
+    expect(screen.getByText(/Votes Down Percentage/i)).toBeInTheDocument();
+    expect(screen.getByText(/Portfolio Users/i)).toBeInTheDocument();
   });
 });
