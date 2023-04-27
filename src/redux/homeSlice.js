@@ -23,7 +23,19 @@ const initialState = {
 const homeSlice = createSlice({
   name: 'trend',
   initialState,
-  reducers: {},
+  reducers: {
+    coinFilter: (state, action) => {
+      const filteredCoin = state.trending
+        .filter((coin) => (
+          coin.name.toLowerCase().includes(action.payload)
+        ));
+
+      return ({
+        ...state,
+        trending: filteredCoin,
+      });
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getHome.pending, () => ({
@@ -45,4 +57,5 @@ const homeSlice = createSlice({
   },
 });
 
+export const { coinFilter } = homeSlice;
 export default homeSlice.reducer;
