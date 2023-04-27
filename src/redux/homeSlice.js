@@ -17,6 +17,7 @@ export const getHome = createAsyncThunk(
 const initialState = {
   isLoading: false,
   trending: [],
+  filter: [],
   error: null,
 };
 
@@ -25,15 +26,14 @@ const homeSlice = createSlice({
   initialState,
   reducers: {
     coinFilter: (state, action) => {
+      const control = [...state.filter];
+      state.trending = control;
       const filteredCoin = state.trending
         .filter((coin) => (
           coin.name.toLowerCase().includes(action.payload)
         ));
 
-      return ({
-        ...state,
-        trending: filteredCoin,
-      });
+      state.trending = filteredCoin;
     },
   },
   extraReducers: (builder) => {
@@ -50,6 +50,13 @@ const homeSlice = createSlice({
           market_cap_rank: item.item.market_cap_rank,
           img: item.item.small,
         })),
+        filter: action.payload.map((item) => ({
+          id: item.item.id,
+          coin_id: item.item.coin_id,
+          name: item.item.name,
+          market_cap_rank: item.item.market_cap_rank,
+          img: item.item.small,
+        })),
       }))
       .addCase(getHome, (action) => ({
         error: action.payload,
@@ -57,5 +64,5 @@ const homeSlice = createSlice({
   },
 });
 
-export const { coinFilter } = homeSlice;
+export const { coinFilter } = homeSlice.actions;
 export default homeSlice.reducer;

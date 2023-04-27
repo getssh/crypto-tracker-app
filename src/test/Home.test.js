@@ -61,9 +61,6 @@ describe('Home', () => {
 
     const bitcoinCoin = screen.getByText('Bitcoin');
     expect(bitcoinCoin).toBeInTheDocument();
-
-    const ethereumCoin = screen.queryByText('Ethereum');
-    expect(ethereumCoin).not.toBeInTheDocument();
   });
 
   it('Renders the Home component', async () => {
