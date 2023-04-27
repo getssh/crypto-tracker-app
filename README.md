@@ -152,6 +152,8 @@ If you like this project please send you feedbacks and give it a start
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
+- Original design by <a href='https://www.behance.net/sakwadesignstudio'>Nelson Sakwa</a>
+
 I would like to thank my coding partners and code reviwers
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
