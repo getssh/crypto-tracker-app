@@ -3,7 +3,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[Book Store\] ](#-book-store-)
+- [📖 \[crypto-tracker-app\] ](#-crypto-tracker-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -25,7 +25,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Book Store] <a name="about-project"></a>
+# 📖 [crypto-tracker-app] <a name="about-project"></a>
 
 **[crypto-tracker-app]** crypto-tracker-app is a React application that utilizes the Crypto API to display trending cryptocurrencies and their details. The app is built with React, Router, React Redux, Redux Toolkit, React Testing Library, Jest, and TailWind CSS. The home page shows trending coins and when the user click on a specific coin a detail numirical information will be shown on the screen. It also have a searching feature and users can input what they are looking for.
 
