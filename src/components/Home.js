@@ -14,12 +14,6 @@ const Home = () => {
     dispatch(getHome());
   }, [dispatch]);
 
-  // const [query, setQuery] = useState('');
-
-  // const filteredData = trending ? trending.filter(
-  //   (item) => item.name.toLowerCase().includes(query.toLowerCase()),
-  // ) : null;
-
   const handleChange = (event) => {
     dispatch(coinFilter(event.target.value));
   };
