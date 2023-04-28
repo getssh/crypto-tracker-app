@@ -3,10 +3,11 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[Book Store\] ](#-book-store-)
+- [📖 \[crypto-tracker-app\] ](#-crypto-tracker-app-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -24,15 +25,15 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Book Store] <a name="about-project"></a>
+# 📖 [crypto-tracker-app] <a name="about-project"></a>
 
-**[bookstore]** This project is a simple React application that allows users to add new books and authors using a form. The app consists of many components. Home page displays the form and a list of added books, and components like Book handles the form inputs and submission. When the user submits the form, a new book object is created and added to the list of books. More over this application can be used to remove and edit books.
+**[crypto-tracker-app]** crypto-tracker-app is a React application that utilizes the Crypto API to display trending cryptocurrencies and their details. The app is built with React, Router, React Redux, Redux Toolkit, React Testing Library, Jest, and TailWind CSS. The home page shows trending coins and when the user click on a specific coin a detail numirical information will be shown on the screen. It also have a searching feature and users can input what they are looking for.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-For this project, HTML, CSS and JavaScript has been used
+For this project, HTML, TailWind CSS, ReactJs, Redux has been used
 
 <details>
   <summary>Client</summary>
@@ -41,6 +42,10 @@ For this project, HTML, CSS and JavaScript has been used
     <li>CSS</li>
     <li>JavaScript</li>
     <li><a href="https://reactjs.org/">React.js</a></li>
+    <li>Redux</li>
+    <li>RESTful API</li>
+    <li>Redux Toolkit</li>
+    <li>Testing library</li>
   </ul>
 </details>
 
@@ -48,18 +53,20 @@ For this project, HTML, CSS and JavaScript has been used
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add new books]**
-- **[Show added books]**
+- **[Show most trending crypto coins]**
+- **[Show the detail of selected coin]**
+- **[Show navigate to diffrent pages]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
-- Coming soon -->
+- <a href='https://crypto-tracker-app-uclw.onrender.com'>Live Demo Link</a>
+- <a href='https://www.loom.com/share/e23f09f185b34006b63da74b306d41de'>Loom Presentation</a>
 
-<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -77,7 +84,7 @@ In order to run this project you need:
 
 Clone this repository to your desired folder:
 
-git clone https://github.com/getssh/bookstore
+git clone https://github.com/getssh/crypto-tracker-app
 
 cd bookstore
 
@@ -118,9 +125,8 @@ npm run build
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Animation and style to the book list and tab]**
-- [ ] **[smooth transition]**
-- [ ] **[Add functionality to edit]**
+- [ ] **[Add more tabs to get information about other currencies]**
+- [ ] **[smooth transition and animation]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,7 +136,7 @@ npm run build
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/getssh/bookstore/issues).
+Feel free to check the [issues page](https://github.com/getssh/crypto-tracker-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,6 +151,8 @@ If you like this project please send you feedbacks and give it a start
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+- Original design by <a href='https://www.behance.net/sakwadesignstudio'>Nelson Sakwa</a>
 
 I would like to thank my coding partners and code reviwers
 
